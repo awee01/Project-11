@@ -42,7 +42,6 @@ app.delete("/api/notes/:noteid", (req, res) => {
       path.join(__dirname, "./db/db.json"),
       JSON.stringify(notes));
       res.json(notes)
-
 });
 
 // HTML calls

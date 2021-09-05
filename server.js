@@ -12,6 +12,7 @@ app.use(express.static("./public"))
 // API calls
 app.get("/api/notes", (req, res) => {
 res.sendFile(path.join(__dirname, "./db/db.json"))
+    
 });
 
 app.post("/api/notes", (req, res) => {
@@ -24,6 +25,7 @@ app.post("/api/notes", (req, res) => {
     res.json(notes)
 
 });
+
 
 //Delete Request
 app.delete("/api/notes/:noteid", (req, res) => {
@@ -39,15 +41,19 @@ app.delete("/api/notes/:noteid", (req, res) => {
 
 });
 
+
 // HTML calls
 app.get("/", (req, res) => {
 res.sendFile(path.join(__dirname, "./public/index.html"));
+    
 });
 
 app.get("/notes", (req, res) => {
 res.sendFile(path.join(__dirname, "./public/notes.html"));
+    
 });
 
 app.listen(PORT, () => {
 console.log(`API server now on port ${PORT}!`);
+    
 });

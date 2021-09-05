@@ -17,8 +17,8 @@ res.sendFile(path.join(__dirname, "./db/db.json"))
 app.post("/api/notes", (req, res) => {
 
     req.body.id = notes.length.toString();
-    const tetext = req.body;
-    notes.push(tetext)
+    const notetext = req.body;
+    notes.push(notetext)
 
     fs.writeFileSync(
     path.join(__dirname, "./db/db.json"),

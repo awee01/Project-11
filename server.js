@@ -34,7 +34,7 @@ app.delete("/api/notes/:noteid", (req, res) => {
     for (let index = 0; index < notes.length; index++) {
     if (notes[index].id === noteid) {
         notes.splice(index, 1)
-        }}
+    }}
 
     fs.writeFileSync("./db/db.json", JSON.stringify(notes))
     res.json(notes)

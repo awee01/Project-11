@@ -2,9 +2,8 @@ const express = require("express");
 const fs = require("fs");
 const notes = require("./db/db.json");
 const path = require("path");
-
-
 const app = express();
+
 var PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({extended: true}));
@@ -29,9 +28,9 @@ app.post("/api/notes", (req, res) => {
 
 });
 
-
 //Delete Request
 app.delete("/api/notes/:noteid", (req, res) => {
+      
       const noteid = req.params.noteid
       for (let index = 0; index < notes.length; index++) {
       if (notes[index].id === noteid) {

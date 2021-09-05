@@ -24,7 +24,7 @@ app.post("/api/notes", (req, res) => {
 
       fs.writeFileSync(
       path.join(__dirname, "./db/db.json"),
-      JSON.stringify(notes, null, 2));
+      JSON.stringify(notes));
       res.json(notes)
 
 });
@@ -40,7 +40,7 @@ app.delete("/api/notes/:noteid", (req, res) => {
 
       fs.writeFileSync(
       path.join(__dirname, "./db/db.json"),
-      JSON.stringify(notes, null, 2));
+      JSON.stringify(notes));
       res.json(notes)
 
 });
